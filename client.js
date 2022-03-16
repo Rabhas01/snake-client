@@ -7,12 +7,19 @@ const connect = function () {
   });
   // interpret incoming data as text
   conn.setEncoding('utf8'); 
+  
   //revieveing a message from the server
   conn.on('data', message => {
     console.log(message);
   });
   
+  //sending a message after we connect to server we use the NAME: command 
+  conn.on('connect', () => {
+    console.log("yihaa we are connected");
+    conn.write("Name: RV")
+  }
+  )
   return conn;
 };
 
-module.exports = {connect}
+module.exports = { connect }
