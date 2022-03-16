@@ -16,10 +16,12 @@ const connect = function () {
   //sending a message after we connect to server we use the NAME: command 
   conn.on('connect', () => {
     console.log("yihaa we are connected");
-    conn.write("Name: RV")
-  }
-  )
-  return conn;
+    conn.write("Name: RV");
+    // conn.write ("Move: up") makes it move as soon we connect
+    });
+    return conn;
+
+    
 };
 
 module.exports = { connect }
