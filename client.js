@@ -19,9 +19,8 @@ const connect = function () {
     conn.write("Name: RV");
     // conn.write ("Move: up") makes it move as soon we connect
     });
-    return conn;
 
-    
+    return conn;  
 };
 
 module.exports = { connect }
